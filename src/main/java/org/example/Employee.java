@@ -8,7 +8,6 @@ public class Employee {
     int salary;
     int age;
 
-    // Конструктор класса
     public Employee(String fullName, String position, String email, String phone, int salary, int age) {
         this.fullName = fullName;
         this.position = position;
@@ -18,7 +17,6 @@ public class Employee {
         this.age = age;
     }
 
-    // Метод для вывода информации об объекте в консоль
     void employeePrintInfo() {
         System.out.println();
         System.out.println("ФИО: " + fullName + ", Должность: " + position + ", Email: " + email +
