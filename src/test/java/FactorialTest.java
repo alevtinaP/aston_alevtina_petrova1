@@ -12,6 +12,8 @@ public class FactorialTest {
         }
     }
 
+    
+
     @Test
     public void testFactorialOfZero() {
         Assert.assertEquals(factorial(0), 1);
