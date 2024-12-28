@@ -1,9 +1,7 @@
-import jdk.jfr.Description;
-import org.example.Factorial;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static org.example.Factorial.calculateFactorial;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FactorialTest {
 
@@ -12,7 +10,8 @@ public class FactorialTest {
         int number = 5;
         int expectedFactorial = 120;
         int actualFactorial = calculateFactorial(number);
-        assertEquals(expectedFactorial, actualFactorial);
+        Assert.assertEquals(actualFactorial, expectedFactorial);
+
     }
 
     @Test
@@ -20,15 +19,14 @@ public class FactorialTest {
         int number = 5;
         int expectedFactorial = 121;
         int actualFactorial = calculateFactorial(number);
-        assertEquals(expectedFactorial, actualFactorial);
+        Assert.assertEquals(actualFactorial, expectedFactorial);
     }
 
-    @Test
-    @Description("факториал числа 0")
+    @Test(description = "факториал числа 0")
     public void testCalculateFactorialZero() {
         int number = 0;
         int expectedFactorial = 1;
         int actualFactorial = calculateFactorial(number);
-        assertEquals(expectedFactorial, actualFactorial);
+        Assert.assertEquals(actualFactorial, expectedFactorial);
     }
 }
