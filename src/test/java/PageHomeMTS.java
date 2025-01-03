@@ -4,6 +4,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageHomeMTS {
+
+
     public WebDriver driver;
 
     public PageHomeMTS(WebDriver driver) {
@@ -12,7 +14,7 @@ public class PageHomeMTS {
     }
 
     @FindBy(xpath = "//div[@class='col-12 col-xl-8']//h2[1]")
-    private WebElement BlockTitleName;
+    public WebElement BlockTitleName;
 
     @FindBy(xpath = "//button[text()='Принять']")
     public WebElement acceptButton;
@@ -47,15 +49,59 @@ public class PageHomeMTS {
     @FindBy(xpath = "(//button[@type='submit'][contains(text(),'Продолжить')])[1]")
     public WebElement nextButton;
 
+    //16HW
+
+    @FindBy(xpath = "//input[@placeholder='Номер телефона']")
+    public WebElement phonePlaceholder;
+
+    @FindBy(xpath = "//input[@placeholder='Сумма']")
+    public WebElement sumPlaceholder;
+
+    @FindBy(xpath = "//input[@placeholder='E-mail для отправки чека']")
+    public WebElement mailPlaceholder;
+
+    //dropdown
+
+    @FindBy(xpath = "//button[@class='select__header']")
+    public WebElement dropdownArrow;
+
+    @FindBy(xpath = "//p[contains(text(),'Домашний интернет')]")
+    public WebElement dropdownHomeInet;
+
+    @FindBy(xpath = "//p[contains(text(),'Рассрочка')]")
+    public WebElement dropdownInstallment;
+
+    @FindBy(xpath = "//p[contains(text(),'Задолженность')]")
+    public WebElement dropdownDebt;
+
+    // для Домашний интернет
+
+    @FindBy(xpath = "//input[@id='internet-phone']")
+    public WebElement phoneAbonent;
+
+
+    // для Рассрочка
+
+    @FindBy(xpath = "//input[@id='score-instalment']")
+    public WebElement accNumber;
+
+    // Для Долг
+
+    @FindBy(xpath = "//input[@id='score-arrears']")
+    public WebElement accNumberDebt;
+
+
     public WebElement getAcceptButton() {
         return acceptButton;
     }
+
 
     public String getHeaderText() {
         return BlockTitleName.getText().replace("\n", " ");
     }
 
-    public boolean isVisaImagePresentForAll(WebElement element1) {
+
+    public boolean isElementPresent(WebElement element1) {
         return element1.isDisplayed();
     }
 
@@ -63,9 +109,18 @@ public class PageHomeMTS {
         element1.click();
     }
 
-    public void writeField(WebElement element, String text) {
+    public void fillField(WebElement element, String text) {
         element.clear();
         element.sendKeys(text);
+    }
+
+    public String getContainsText(WebElement element) {
+        String placeholderText = element.getAttribute("placeholder");
+        return placeholderText;
+    }
+
+    public String getTextFromElement(WebElement element) {
+        return element.getText();
     }
 
 }
