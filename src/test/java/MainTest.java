@@ -76,7 +76,6 @@ public class MainTest {
         assertTrue(pageHomeMTS.isElementPresent(pageHomeMTS.mastercardSecureImage), "No mastercardSecureImage");
         assertTrue(pageHomeMTS.isElementPresent(pageHomeMTS.belImage), "No belImage");
         assertTrue(pageHomeMTS.isElementPresent(pageHomeMTS.visaImageVer), "No visaImageVer");
-
     }
 
 
@@ -129,7 +128,6 @@ public class MainTest {
 
         String expectedTextMail = "E-mail для отправки чека";
         assertEquals(expectedTextMail, pageHomeMTS.getContainsText(pageHomeMTS.mailPlaceholder), "The placeholder should contain the text 'expectedTextMail'");
-
     }
 
 
