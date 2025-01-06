@@ -1,3 +1,6 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +52,8 @@ public class MainTest {
 
 
     @Test
+    @Description ("проверка названия блока")
+    @Severity(SeverityLevel.MINOR)
     public void testBlockName() {
         String expectedText = "Онлайн пополнение без комиссии";
         String actualText = pageHomeMTS.getHeaderText();
@@ -57,11 +62,13 @@ public class MainTest {
 
 
     @Test
+    @Description ("проверка иконки Visa")
     public void testIconVisa() {
         assertTrue(pageHomeMTS.isElementPresent(pageHomeMTS.visaImage), "No Visa");
     }
 
     @Test
+    @Description ("проверка проверка всех иконок платежных систем")
     public void testIconAll() {
 
         //для упрощения все иконки платежных систем в одном тесте
@@ -74,6 +81,9 @@ public class MainTest {
 
 
     @Test
+    @Description ("получение линки")
+    @Severity(SeverityLevel.MINOR)
+
     public void testDetailsLink() {
         String initialUrl = driver.getCurrentUrl();
         pageHomeMTS.clickControl(pageHomeMTS.detailsLink);
