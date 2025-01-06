@@ -52,7 +52,7 @@ public class MainTest {
 
 
     @Test
-    @Description ("проверка названия блока")
+    @Description("проверка названия блока")
     @Severity(SeverityLevel.MINOR)
     public void testBlockName() {
         String expectedText = "Онлайн пополнение без комиссии";
@@ -62,13 +62,13 @@ public class MainTest {
 
 
     @Test
-    @Description ("проверка иконки Visa")
+    @Description("проверка иконки Visa")
     public void testIconVisa() {
         assertTrue(pageHomeMTS.isElementPresent(pageHomeMTS.visaImage), "No Visa");
     }
 
     @Test
-    @Description ("проверка проверка всех иконок платежных систем")
+    @Description("проверка проверка всех иконок платежных систем")
     public void testIconAll() {
 
         //для упрощения все иконки платежных систем в одном тесте
@@ -81,7 +81,7 @@ public class MainTest {
 
 
     @Test
-    @Description ("получение линки")
+    @Description("получение линки")
     @Severity(SeverityLevel.MINOR)
 
     public void testDetailsLink() {
@@ -204,7 +204,6 @@ public class MainTest {
 
         WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement element = wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'BYN')]")));
-
 
 
         String expectedText = "22.00 BYN";
