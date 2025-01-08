@@ -24,7 +24,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <scope>test</scope>
         </dependency>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.27.0</version>
@@ -36,7 +36,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>1.81</version>
             <scope>test</scope>
         </dependency>
-
+-->
        <!-- <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -50,9 +50,19 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <version>2.12.1</version>
             <scope>test</scope>
            <!-- <allure.results.directory>${project.build.directory}/target/allure-results</allure.results.directory>-->
-
         </dependency>
 
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.2</version>
+        </dependency>
 
 
     </dependencies>
